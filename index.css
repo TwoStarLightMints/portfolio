@@ -60,17 +60,24 @@ footer {
 }
 
 main {
-    margin: 10vh 0;
+    margin: 10vh 24px;
     max-width: 1000px;
     align-self: center;
 }
 
+div :has(> form) {
+    width: fit-content;
+    margin: 0 auto;
+}
+
 #contact form {
-    box-sizing: border-box;
-    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
     input, textarea {
         display: block;
         border: none;
+        width: 100%;
     }
 }
