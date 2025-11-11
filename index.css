@@ -65,7 +65,7 @@ main {
     align-self: center;
 }
 
-div :has(> form) {
+div:has(> form) {
     width: fit-content;
     margin: 0 auto;
 }
@@ -75,9 +75,23 @@ div :has(> form) {
     flex-direction: column;
     gap: 20px;
 
+    color: black;
+
+    background-color: #dfdfdf;
+    padding: 20px;
+    border-radius: 20px;
+
     input, textarea {
+        box-sizing: border-box;
         display: block;
-        border: none;
         width: 100%;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 0px 1px 1px black;
+        font: inherit;
+    }
+
+    textarea {
+        resize: none;
     }
 }
