@@ -28,29 +28,37 @@
                     <img src="" alt="Picture of me">
 
                     <p>
-                    Hi, my name is K.C. Bomonti. I am a full stack web developer specializing in Django web apps
-                    that leverage React.js for interactive web pages. Feel free to reach out if you would like to learn more.
+                        Hi, my name is K.C. Bomonti. I am a full stack web developer specializing in Django web apps
+                        that leverage React.js for interactive web pages. Feel free to reach out if you would like to learn more.
                     </p>
                 </section>
 
                 <section id="contact">
                     <h1>Contact me</h1>
-                    <form action="POST">
-                        <div>
-                            <label for="name">Name:</label>
-                            <input id="name" name="name" type="text">
-                        </div>
 
-                        <div>
-                            <label for="email">Email:</label>
-                            <input id="email" name="email" type="email">
-                        </div>
+                    <div>
+                        <form action="POST">
+                            <div>
+                                <label for="name">Name</label>
+                                <input id="name" name="name" type="text">
+                            </div>
 
-                        <div class="message">
-                            <label for="message">Message:</label>
-                            <textarea id="message" name="message"></textarea>
-                        </div>
-                    </form>
+                            <div>
+                                <label for="email">Email</label>
+                                <input id="email" name="email" type="email">
+                            </div>
+
+                            <div>
+                                <label for="phone">Phone</label>
+                                <input id="phone" name="phone" type="tel">
+                            </div>
+
+                            <div class="message">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="10"></textarea>
+                            </div>
+                        </form>
+                    </div>
                 </section>
             </main>
 
