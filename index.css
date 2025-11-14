@@ -1,10 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
     --header-footer-padding: 12px;
-}
-
-h1 {
-    padding: 0;
-    margin: 0;
 }
 
 html, body {
@@ -16,7 +13,7 @@ html, body {
 body {
     background-color: #000813;
     color: white;
-    font-family: 'sans';
+    font-family: 'Roboto', 'sans';
 }
 
 header {
@@ -25,6 +22,7 @@ header {
     justify-content: space-between;
 
     #logo {
+        text-decoration: none;
         font-weight: bold;
         font-size: 1.25em;
     }
@@ -44,11 +42,6 @@ header {
 
 footer {
     padding: var(--header-footer-padding);
-
-    p {
-        padding: 0;
-        margin: 0;
-    }
 }
 
 #content {
@@ -99,4 +92,9 @@ div:has(> form) {
     textarea {
         resize: none;
     }
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
 }
