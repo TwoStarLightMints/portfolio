@@ -1,6 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
+    --color-primary: #FFFFFF;
+    --background-color-primary: #000813;
+    --background-color-secondary-1: #2B5186;
+    --background-color-secondary-2: #193153;
+    --background-color-error: #FFC0C0;
+
+    --section-padding: 20px;
+    --section-margin: 14px;
+    --section-border-radius: 8px;
+
     --header-footer-padding: 12px;
 }
 
@@ -11,8 +21,8 @@ html, body {
 }
 
 body {
-    background-color: #000813;
-    color: white;
+    background-color: var(--background-color-primary);
+    color: var(--color-primary);
     font-family: 'Roboto', 'sans';
 }
 
@@ -29,14 +39,47 @@ header {
 
     ul {
         display: flex;
+        height: 100%;
         gap: 20px;
         padding: 0;
         margin: 0;
         list-style: none;
+
+        & a {
+            text-decoration: none;
+            vertical-align: middle;
+        }
     }
 
     a {
-        color: white;
+        color: var(--color-primary);
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    max-width: 1000px;
+    align-self: center;
+
+    section {
+        padding: var(--section-padding);
+        margin: var(--section-margin);
+        border-radius: var(--section-border-radius);
+
+        h1 {
+            margin-bottom: 20px;
+        }
+    }
+
+    #about {
+        background-color: var(--background-color-secondary-1);
+    }
+
+    #contact {
+        background-color: var(--background-color-secondary-2);
     }
 }
 
@@ -44,57 +87,50 @@ footer {
     padding: var(--header-footer-padding);
 }
 
+p, h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+}
+
 #content {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
 
-    #about {
-        img {
-            display: block;
+#about {
+    img {
+        display: block;
+    }
+}
+
+#contact {
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        input, textarea {
+            width: 100%;
+            font: inherit;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 4px;
+        }
+
+        input:invalid {
+            background-color: var(--background-color-error);
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        button {
+            align-self: center;
+
+            font: inherit;
         }
     }
-}
-
-main {
-    margin: 10vh 24px;
-    max-width: 1000px;
-    align-self: center;
-}
-
-div:has(> form) {
-    width: fit-content;
-    margin: 0 auto;
-}
-
-#contact form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    color: black;
-
-    background-color: #dfdfdf;
-    padding: 20px;
-    border-radius: 20px;
-
-    input, textarea {
-        box-sizing: border-box;
-        display: block;
-        width: 100%;
-        border-radius: 5px;
-        border: none;
-        box-shadow: 0px 1px 1px black;
-        font: inherit;
-    }
-
-    textarea {
-        resize: none;
-    }
-}
-
-p, h1, h2, h3, h4, h5, h6 {
-    padding: 0;
-    margin: 0;
 }

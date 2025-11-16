@@ -6,6 +6,21 @@
         <title>K.C. Bomonti</title>
 
         <link rel="stylesheet" href="./index.css">
+
+        <script>
+            const form = document.getElementById('contact-form');
+
+            form.addEventListener('submit', function(e) {
+
+                const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
+
+                if (!hCaptcha) {
+                    e.preventDefault();
+                    alert("Please fill out captcha field")
+                    return
+                }
+            });
+        </script>
     </head>
 
     <body>
@@ -36,29 +51,33 @@
                 <section id="contact">
                     <h1>Contact me</h1>
 
-                    <div>
-                        <form action="POST">
-                            <div>
-                                <label for="name">Name</label>
-                                <input id="name" name="name" type="text">
-                            </div>
+                    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="a43a0a2b-fc31-44be-9198-96436d02ca28">
+                        <div>
+                            <label for="name">Name</label>
+                            <input id="name" name="name" type="text" required>
+                        </div>
 
-                            <div>
-                                <label for="email">Email</label>
-                                <input id="email" name="email" type="email">
-                            </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" required>
+                        </div>
 
-                            <div>
-                                <label for="phone">Phone</label>
-                                <input id="phone" name="phone" type="tel">
-                            </div>
+                        <div>
+                            <label for="phone">Phone</label>
+                            <input id="phone" name="phone" type="tel" required>
+                        </div>
 
-                            <div class="message">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="10"></textarea>
-                            </div>
-                        </form>
-                    </div>
+                        <div class="message">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="10" required></textarea>
+                        </div>
+                        
+                        <div class="h-captcha" data-captcha="true"></div>
+
+                        <button type="submit">Send</button>
+                    </form>
+
                 </section>
             </main>
 
@@ -66,5 +85,7 @@
                 <p>Copyright &copy; 2025 K.C. Bomonti. All rights reserved.</p>
             </footer>
         </div>
+
+        <script src="https://web3forms.com/client/script.js" async defer></script>
     </body>
 </html>
