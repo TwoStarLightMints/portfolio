@@ -119,8 +119,9 @@ p, h1, h2, h3, h4, h5, h6 {
             padding: 4px;
         }
 
-        input:invalid {
-            background-color: var(--background-color-error);
+        div:has([required]) > label::after {
+            color: orange;
+            content: "*";
         }
 
         textarea {
