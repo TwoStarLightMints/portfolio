@@ -8,18 +8,19 @@
         <link rel="stylesheet" href="/index.css">
 
         <script>
-            const form = document.getElementById('contact-form');
+            window.onload = () => {
+                const form = document.getElementById('contact-form');
 
-            form.addEventListener('submit', function(e) {
+                form.addEventListener('submit', function(e) {
+                    const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
 
-                const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
-
-                if (!hCaptcha) {
-                    e.preventDefault();
-                    alert("Please fill out captcha field")
-                    return
-                }
-            });
+                    if (!hCaptcha) {
+                        e.preventDefault();
+                        alert("Please fill out captcha field");
+                        return;
+                    }
+                });
+            }
         </script>
     </head>
 
